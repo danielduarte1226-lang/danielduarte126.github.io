@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — I.E.S.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Mulish:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #16226f;
+    --navy-deep: #0a1140;
+    --navy-black: #050a24;
+    --gold: #e2a824;
+    --gold-soft: #f0c65a;
+    --red: #c22a35;
+    --ink: #f4efe0;
+    --ink-dim: rgba(244,239,224,0.62);
+    --line: rgba(244,239,224,0.14);
+    --display: 'Fredoka', sans-serif;
+    --body: 'Mulish', sans-serif;
+    --mono: 'Space Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--body);font-size:1.05rem;background:var(--navy-black);color:var(--ink);-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+
+  .bg-field{
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(226,168,36,0.10), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 100% 110%, rgba(194,42,53,0.10), transparent 60%),
+      linear-gradient(180deg, var(--navy-black) 0%, var(--navy-deep) 45%, var(--navy-black) 100%);
+  }
+
+  header{
+    position:relative;z-index:2;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px clamp(20px,5vw,64px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand-text{display:flex;flex-direction:column;line-height:1.05;}
+  .brand-text .eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:0.16em;color:var(--gold-soft);text-transform:uppercase;}
+  .brand-text .name{font-family:var(--display);font-weight:600;font-size:15px;}
+  nav ul{display:flex;gap:clamp(14px,3vw,30px);list-style:none;flex-wrap:wrap;}
+  nav a{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-dim);position:relative;padding-bottom:4px;}
+  nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .35s cubic-bezier(.2,.8,.2,1);}
+  nav a:hover{color:var(--ink);}
+  nav a:hover::after{width:100%;}
+  nav a.active{color:var(--gold-soft);}
+
+  main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:90px clamp(20px,5vw,64px) 140px;}
+
+  .page-head{margin-bottom:56px;text-align:center;}
+  .page-head .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);display:block;margin-bottom:14px;}
+  .page-head h1{font-family:var(--display);font-weight:600;font-size:clamp(2.1rem,5vw,3.1rem);line-height:1.08;margin-bottom:14px;}
+  .page-head p{color:var(--ink-dim);font-size:1rem;max-width:46ch;margin:0 auto;}
+
+  .contact-card{
+    border:1px solid var(--line);border-radius:12px;
+    padding:clamp(30px,6vw,48px);
+    background:linear-gradient(180deg, rgba(226,168,36,0.05), transparent 40%);
+    box-shadow:0 50px 100px -40px rgba(0,0,0,.6);
+    display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;
+  }
+
+  .fb-button{
+    display:flex;align-items:center;justify-content:center;
+    width:84px;height:84px;border-radius:50%;
+    background:#1877F2;
+    box-shadow:0 10px 26px -8px rgba(24,119,242,0.65);
+    transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease;
+  }
+  .fb-button:hover{transform:scale(1.16);box-shadow:0 16px 34px -8px rgba(24,119,242,0.8);}
+  .fb-button:active{transform:scale(1.05);}
+  .fb-button svg{width:38px;height:38px;}
+
+  .contact-label{font-family:var(--display);font-weight:600;font-size:1.3rem;}
+  .contact-sub{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft);}
+
+  .address-block{
+    margin-top:6px;padding-top:22px;border-top:1px solid var(--line);width:100%;
+    font-family:var(--mono);font-size:12px;line-height:1.8;color:var(--ink-dim);
+  }
+  .address-block strong{display:block;color:var(--ink);font-family:var(--display);font-size:1rem;margin-bottom:4px;}
+
+  footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:34px clamp(20px,5vw,64px);
+    font-family:var(--mono);font-size:10px;color:var(--ink-dim);letter-spacing:.06em;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+</style>
+</head>
+<body>
+
+<div class="bg-field"></div>
+
+<header>
+  <div class="brand-text">
+    <span class="eyebrow">I.E.S.A.</span>
+    <span class="name">San Juan de Arama</span>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#mision-vision">Misión &amp; Visión</a></li>
+      <li><a href="index.html#valores">Valores</a></li>
+      <li><a href="index.html#himno">Himno</a></li>
+      <li><a href="contacto.html" class="active">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="page-head">
+    <span class="eyebrow">Comunidad educativa</span>
+    <h1>Contáctanos</h1>
+    <p>Síguenos en nuestras redes para enterarte de noticias, eventos y actividades de la institución.</p>
+  </div>
+
+  <div class="contact-card">
+    <a class="fb-button" href="https://www.facebook.com/IESARAMA/?ref=embed_page#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook">
+      <svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
+        <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/>
+      </svg>
+    </a>
+    <div>
+      <span class="contact-sub">Facebook</span>
+      <div class="contact-label">Síguenos en Facebook</div>
+    </div>
+
+    <div class="address-block">
+      <strong>Institución Educativa San Juan de Arama</strong>
+      Transversal 12 # 12-51, Barrio La Torre Gómez<br>
+      San Juan de Arama, Meta · Colombia
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span>© 2026 I.E.S.A. — Honor, Ciencia, Inteligencia y Virtud</span>
+  <span><a href="index.html" style="color:var(--gold-soft);">← Volver al sitio principal</a></span>
+</footer>
+
+</body>
+</html>
